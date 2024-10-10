@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Parking Lot Portal v1</title>
+<link rel="stylesheet" th:href="@{css/stles.css}">
+</head>
+<body>
+	<div id="header">
+		<div class="headerColor">
+			<ul>
+			<li> <a href="index.html" th:href="@{/home}"> Home </a> </li>
+			<li> <a href="#"> Employees</a> </li>
+			<li> <a href="#"> Services </a> </li>
+			</ul>
+		</div>
+		<h1> Employees</h1>
+		<table id="employees">
+			<thead>
+				<tr>
+					<th> Name </th>
+					<th> Surname </th>
+					<th> Age </th>
+					<th> Actions </th>
+				</tr>
+				
+			</thead>
+		<tbody>
+			<tr th:each="employee : ${employees}">
+				<td><span th:text="${employee.firstName}"> First Name</span> </td>
+				<td><span th:text="${employee.lastName}"> Last Name</span> </td>
+				<td><span th:text="${employee.age}"> Age</span> </td>
+<!-- 				<td> <a th:href="@{/edit{id}(id=${employee.employee_id})}"> Delete</a> -->
+<!-- 					 <a th:href="@{/delete{id}(id=${employee.employee_id})}"> Delete</a> -->
+<!-- 				</td> -->
+			</tr>
+		</tbody>
+		
+		</table>
+	</div>
+
+</body>
+</html>
